@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Control Chart Selector</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap bar-in"><a class="brand" href="../index.html"><span class="belt"></span><span class="label"><b>LSS</b> Black Belt</span></a><div class="bar-prog"><div class="track"><div class="fill" id="fill"></div></div><div class="prog-txt" id="progTxt">0 / 16 modules</div></div><details class="nav"><summary>☰ Contents</summary><div class="nav-menu"><h5>Course</h5><a href="../index.html">Home / curriculum</a><a href="../podcast.html">🎧 Podcast (audio)</a><a href="https://icechathuranga.github.io/lean-six-sigma-green-belt/" target="_blank" rel="noopener">Green Belt course ↗</a><h5>Lessons</h5><a href="../lessons/00-orientation.html">00 · Orientation</a><a href="../lessons/01-deployment-project-selection.html">01 · Enterprise deployment & project selection</a><a href="../lessons/02-team-leadership-change.html">02 · Team leadership & change management</a><a href="../lessons/03-advanced-define.html">03 · Advanced Define</a><a href="../lessons/04-msa.html">04 · Measurement Systems Analysis</a><a href="../lessons/05-capability.html">05 · Process Capability</a><a href="../lessons/06-statistics-foundations.html">06 · Statistics Foundations</a><a href="../lessons/07-hypothesis-testing.html">07 · Hypothesis Testing in Depth</a><a href="../lessons/08-regression.html">08 · Correlation & regression</a><a href="../lessons/09-multi-vari.html">09 · Multi-vari studies & advanced root cause</a><a href="../lessons/10-doe-1.html">10 · Design of Experiments I</a><a href="../lessons/11-doe-2.html">11 · Design of Experiments II</a><a href="../lessons/12-advanced-lean.html">12 · Advanced Lean for Black Belts</a><a href="../lessons/13-advanced-control.html">13 · Advanced Statistical Process Control</a><a href="../lessons/14-sustain-coach-dfss.html">14 · Sustain, Replicate & Coach</a><a href="../lessons/15-capstone.html">15 · Capstone — Lead a Full Black Belt Project</a><h5>Templates</h5><a href="../tools/project-selection-matrix.html">Project Selection Matrix</a><a href="../tools/project-charter.html">Project Charter</a><a href="../tools/raci-communication-plan.html">RACI & Communication Plan</a><a href="../tools/gage-rr-worksheet.html">Gage R&R Worksheet</a><a href="../tools/hypothesis-test-planner.html">Hypothesis Test Planner</a><a href="../tools/doe-planner.html">DOE Planner</a><a href="../tools/fmea.html">FMEA</a><a href="../tools/control-plan.html">Control Plan</a><h5>Reference</h5><a href="../reference/control-chart-selector.html">Control Chart Selector</a><a href="../reference/doe-design-chooser.html">DOE Design Chooser</a><a href="../reference/formulas.html">Formulas</a><a href="../reference/which-statistical-test.html">Which Statistical Test</a><a href="../reference/glossary.html">Glossary</a><a href="../reference/resources.html">Resources</a><a href="../reference/datasets.html">Practice Datasets</a><a href="../reference/answer-keys.html">Answer Keys (solutions)</a></div></details><button class="icon-btn" id="theme" title="Toggle light / dark" aria-label="Toggle theme">◐</button></div></header>
+<main class="wrap" id="main">
+<article class="prose"><a class="lead-back" href="../index.html">← Course curriculum</a><h1>Cheat Sheet — Choosing a Control Chart</h1>
+<p>First question: <strong>variables data (measured) or attributes data (counted)?</strong></p>
+<h2>Variables (continuous: time, cost, score)</h2>
+<div class="table-wrap"><table><thead><tr><th>Subgroup size</th><th>Chart</th><th>Notes</th></tr></thead><tbody><tr><td>1 (one reading at a time)</td><td><strong>I-MR</strong> (Individuals &amp; Moving Range)</td><td>e.g. a daily approval time</td></tr><tr><td>2–9</td><td><strong>X̄-R</strong> (mean &amp; range)</td><td>the workhorse; <code>tth-subgroups.csv</code> uses n=5</td></tr><tr><td>≥10</td><td><strong>X̄-S</strong> (mean &amp; standard deviation)</td><td>S is more efficient than R for big subgroups</td></tr></tbody></table></div>
+<h2>Attributes (counts / pass-fail)</h2>
+<div class="table-wrap"><table><thead><tr><th>What you count</th><th>Constant sample size?</th><th>Chart</th></tr></thead><tbody><tr><td>Defective <strong>units</strong> (pass/fail)</td><td>Yes</td><td><strong>np</strong> chart</td></tr><tr><td>Defective <strong>units</strong> (proportion)</td><td>No</td><td><strong>p</strong> chart</td></tr><tr><td><strong>Defects</strong> (a unit can have several)</td><td>Yes</td><td><strong>c</strong> chart</td></tr><tr><td><strong>Defects per unit</strong></td><td>No</td><td><strong>u</strong> chart</td></tr></tbody></table></div>
+<h2>X̄-R limits (worked, from <code>tth-subgroups.csv</code>, n=5)</h2>
+<p>X̿ = 26.20, R̄ = 4.57 → <strong>X̄ UCL = 28.84, LCL = 23.57</strong> (X̿ ± A₂R̄); <strong>R UCL = 9.65</strong> (D₄R̄). Subgroup 15 is above the UCL → a <strong>special cause</strong> to investigate.</p>
+<p>Constants: n=2 → A₂=1.880, D₄=3.267 · n=3 → 1.023, 2.574 · n=4 → 0.729, 2.282 · n=5 → 0.577, 2.114.</p>
+<h2>Reading the chart (special-cause signals — Nelson / Western Electric)</h2>
+<ol><li>Any point beyond 3σ (outside UCL/LCL). 2. Nine points in a row on one side of the centre line. 3. Six in a row steadily increasing or decreasing. 4. Fourteen alternating up/down. 5. Two of three beyond 2σ, same side. (…and more.)</li></ol>
+<h2>Small shifts?</h2>
+<p>Shewhart charts (above) are slow to catch <strong>small, sustained</strong> shifts. Use <strong>CUSUM</strong> or <strong>EWMA</strong> charts — they accumulate evidence and react faster to a drift of ~0.5–1.5σ.</p>
+<blockquote><p><strong>Golden rule:</strong> control limits come from the <em>process's own data</em> (what it does); specification limits come from the <em>customer</em> (what it should do). Never mix them on one chart. React to special causes; do not "tamper" with common-cause noise.</p></blockquote></article>
+</main>
+<footer><div class="wrap"><p>Lean Six Sigma — Black Belt. A self-study course that assumes <a href="https://icechathuranga.github.io/lean-six-sigma-green-belt/" target="_blank" rel="noopener">Green Belt</a> knowledge. Your progress saves in this browser. <a href="../index.html">Back to the curriculum</a>.</p></div></footer>
+<script>window.LSS_PAGE={"href": "reference/control-chart-selector.html", "title": "Control Chart Selector"};</script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

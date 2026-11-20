@@ -1,0 +1,9 @@
+Welcome to the Lean Six Sigma Black Belt audio course.
+
+This course assumes you already hold a Green Belt, so you can already run a DMAIC project, read a control chart, and run a basic hypothesis test. We build straight on top of that.
+
+So what does Black Belt add? Three things. First, you lead bigger, cross-functional projects, the kind that cross departments, regions and systems. Second, you lead and coach people: teams you don't manage, Green Belts you develop, and change against real resistance. And third, the advanced statistics: multiple regression, analysis of variance, and Design of Experiments.
+
+Each episode gives you the same shape: why it matters, the plain-language intuition, one worked example, and a quick self-check. The written lessons hold the full rigour. And one example runs the whole way through, reducing time-to-hire across a multi-region HR operation.
+
+It's a real step up from Green Belt, but you've earned your place here, so let's begin.

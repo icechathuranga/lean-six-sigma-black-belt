@@ -1,0 +1,31 @@
+Module Zero. Orientation — what Black Belt adds.
+
+Let's start with a simple question. You already hold a Green Belt. You can run a DMAIC project on a well-scoped problem, you can read a control chart, and you can run a basic hypothesis test. So what, exactly, is a Black Belt for?
+
+Here's the one-line answer. A Green Belt improves a process. A Black Belt improves processes, and the people and systems around them. Bigger problems, more departments, more money at stake, more resistance, and statistics that a spreadsheet alone simply cannot carry. If any of your Green Belt foundations feel shaky, this is the moment to go back and firm them up, because everything here is built on top of them.
+
+Think of what Black Belt adds as three step-changes.
+
+The first is scale and scope. Green Belt projects usually live inside one team, or one step of a process. Black Belt projects are cross-functional. They cross departments, regions and systems. Our running example through this whole course is reducing time-to-hire and the onboarding error rate across a multi-region HR operation, with four regions: North, South, East and West. That one project touches recruiters, hiring managers, I T provisioning, payroll and regional HR leads. No single manager owns the whole thing, and that is exactly why it needs a Black Belt. Bigger scope also means bigger risk. A change that helps one region can quietly hurt another, so you measure more widely, and you pilot before you roll out.
+
+The second step-change is people leadership. As a Black Belt you lead teams you don't manage. You coach Green Belts through their own projects. And you manage change against real resistance. A technically perfect solution that nobody adopts has delivered precisely nothing. That's why a large part of this course is leadership, deployment and change, not statistics. That balance is deliberate.
+
+The third step-change is advanced analytics. Green Belt gives you the basics. Black Belt adds the heavy tools: multiple regression, to find what actually drives time-to-hire; analysis of variance, to ask whether regions genuinely differ; advanced measurement systems analysis; capability analysis for data that isn't neatly normal; and Design of Experiments, where you deliberately change process settings to find the best combination, rather than guessing one factor at a time.
+
+Here's a useful shorthand to carry with you. A Green Belt solves the problem in front of it. A Black Belt chooses which problems are worth solving, builds the business case, leads the people, and proves the result with statistics that stand up to challenge.
+
+Now, you already know the five DMAIC phases: Define, Measure, Analyse, Improve, Control. What deepens at Black Belt? In Define, the charter is negotiated with a sponsor over real money, not just written. In Measure, you no longer assume the data is trustworthy, you prove it, with a formal measurement check before you trust a single number. In Analyse, this is where the Black Belt statistics concentrate, moving from "we think this causes that" to a quantified, tested relationship with stated confidence. In Improve, Design of Experiments lets you engineer the solution, and you pilot before you scale. And in Control, your control plans have to survive handover across regions. The discipline that makes it DMAIC and not guesswork is simple. You do not move to the next phase until the current one holds up to a tollgate review. And as a Black Belt, you will run those reviews, including for the Green Belts you coach.
+
+Two habits define the role, and you need both at once. The first: decide from data, not from opinion or rank. When a regional head insists "my region is slower because the roles are harder", you don't argue, you test it. The data may agree, disagree, or reframe the question entirely, and your loyalty is to the evidence. The second habit: lead with influence, not authority. You rarely have line authority over your team. You get results through a clear charter, a credible sponsor, honest communication, and genuine respect for the people whose work you're changing, many of whom quietly fear that "efficiency" is a polite word for job cuts. Being rigorous about the numbers and humane about the people, both at the same time, is the real Black Belt craft.
+
+One practical note on tools. You won't spend a penny on software. A spreadsheet handles most of the course. For the heavy statistics, use a free, point-and-click stats package such as jamovi or JASP. If you code, Python or R will do everything and more. Install one of those this week, so it's ready when you need it.
+
+The full written lesson has the complete DMAIC breakdown, phase by phase, the course map, and the datasets. For now, let's check the big ideas landed.
+
+Question one. Name one way a Black Belt project typically differs from a Green Belt project. ... It is larger and cross-functional. It crosses departments, regions or systems, so no single manager owns it, which raises both the stakes and the need for leadership and change management.
+
+Question two. What are the two halves of the Black Belt mindset? ... Decide from data rather than opinion or rank, and lead through influence rather than line authority. Rigorous about the numbers, humane about the people.
+
+Question three. What is the running example for this course, and why was it chosen? ... Reducing time-to-hire and the onboarding error rate across a multi-region HR operation. It's rich enough to exercise every tool, from regression and analysis of variance to Design of Experiments.
+
+That wraps up your orientation, and next episode we look at how an organisation actually deploys Black Belts and chooses the projects worth their time, so I'll see you there.

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Answer Keys</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap bar-in"><a class="brand" href="../index.html"><span class="belt"></span><span class="label"><b>LSS</b> Black Belt</span></a><div class="bar-prog"><div class="track"><div class="fill" id="fill"></div></div><div class="prog-txt" id="progTxt">0 / 16 modules</div></div><details class="nav"><summary>☰ Contents</summary><div class="nav-menu"><h5>Course</h5><a href="../index.html">Home / curriculum</a><a href="../podcast.html">🎧 Podcast (audio)</a><a href="https://icechathuranga.github.io/lean-six-sigma-green-belt/" target="_blank" rel="noopener">Green Belt course ↗</a><h5>Lessons</h5><a href="../lessons/00-orientation.html">00 · Orientation</a><a href="../lessons/01-deployment-project-selection.html">01 · Enterprise deployment & project selection</a><a href="../lessons/02-team-leadership-change.html">02 · Team leadership & change management</a><a href="../lessons/03-advanced-define.html">03 · Advanced Define</a><a href="../lessons/04-msa.html">04 · Measurement Systems Analysis</a><a href="../lessons/05-capability.html">05 · Process Capability</a><a href="../lessons/06-statistics-foundations.html">06 · Statistics Foundations</a><a href="../lessons/07-hypothesis-testing.html">07 · Hypothesis Testing in Depth</a><a href="../lessons/08-regression.html">08 · Correlation & regression</a><a href="../lessons/09-multi-vari.html">09 · Multi-vari studies & advanced root cause</a><a href="../lessons/10-doe-1.html">10 · Design of Experiments I</a><a href="../lessons/11-doe-2.html">11 · Design of Experiments II</a><a href="../lessons/12-advanced-lean.html">12 · Advanced Lean for Black Belts</a><a href="../lessons/13-advanced-control.html">13 · Advanced Statistical Process Control</a><a href="../lessons/14-sustain-coach-dfss.html">14 · Sustain, Replicate & Coach</a><a href="../lessons/15-capstone.html">15 · Capstone — Lead a Full Black Belt Project</a><h5>Templates</h5><a href="../tools/project-selection-matrix.html">Project Selection Matrix</a><a href="../tools/project-charter.html">Project Charter</a><a href="../tools/raci-communication-plan.html">RACI & Communication Plan</a><a href="../tools/gage-rr-worksheet.html">Gage R&R Worksheet</a><a href="../tools/hypothesis-test-planner.html">Hypothesis Test Planner</a><a href="../tools/doe-planner.html">DOE Planner</a><a href="../tools/fmea.html">FMEA</a><a href="../tools/control-plan.html">Control Plan</a><h5>Reference</h5><a href="../reference/control-chart-selector.html">Control Chart Selector</a><a href="../reference/doe-design-chooser.html">DOE Design Chooser</a><a href="../reference/formulas.html">Formulas</a><a href="../reference/which-statistical-test.html">Which Statistical Test</a><a href="../reference/glossary.html">Glossary</a><a href="../reference/resources.html">Resources</a><a href="../reference/datasets.html">Practice Datasets</a><a href="../reference/answer-keys.html">Answer Keys (solutions)</a></div></details><button class="icon-btn" id="theme" title="Toggle light / dark" aria-label="Toggle theme">◐</button></div></header>
+<main class="wrap" id="main">
+<article class="prose"><a class="lead-back" href="datasets.html">← Datasets</a><p style="color:var(--muted);font-size:13px">Worked solutions — try the exercises first.</p><h1>Black Belt datasets — verified answer keys</h1>
+<p>All numbers below were computed with numpy/scipy/statsmodels (seed-fixed). Lesson authors MUST use these exact figures.</p>
+<h2>1. Multiple regression — time-to-hire-regression.csv</h2>
+<p>R-squared = 0.661, adj R2 = 0.652, F p-value = 3.84e-27 coef Intercept: 9.016  (p=1.13e-07) coef interview_rounds: 3.448  (p=6.64e-19) coef offer_delay_days: 1.979  (p=3.59e-09) coef recruiter_caseload: 0.373  (p=2.49e-09) =&gt; each extra interview round adds ~3.4 days; model explains ~66% of variation.</p>
+<h2>2. One-way ANOVA — time-to-hire-by-region.csv</h2>
+<p>group means (days): {'East': 24.5, 'North': 26.8, 'South': 30.0, 'West': 32.2} ANOVA F = 15.01, p = 2.54e-08  =&gt; regions differ significantly</p>
+<h2>3. Gage R&amp;R (ANOVA method) — interview-score-gagerr.csv</h2>
+<p>repeatability var=3.13, reproducibility var=3.45, part var=62.28 %GRR (contribution)=9.6%, %GRR (study var)=30.9%, ndc=4 =&gt; rule of thumb: %study &lt;10% good, 10-30% marginal, &gt;30% unacceptable; ndc&gt;=5 desired. Here %study=31%.</p>
+<h2>4a. Capability (normal) — onboarding-capability.csv</h2>
+<p>mean=14.01, sd=1.89, USL=20 -&gt; Cpk(upper)=1.05; Shapiro p=0.039 (normal if p&gt;0.05)</p>
+<h2>4b. Capability (non-normal) — response-time-skewed.csv</h2>
+<p>Shapiro p=0.0000 (NOT normal) -&gt; after log transform Shapiro p=0.664; median=4.3h</p>
+<h2>5. DOE 2^3 full factorial (2 reps) — doe-factorial.csv</h2>
+<p>R2=0.963. Effects (= 2<em>coef) and p-values: A_structured_guide: effect=-6.34 (p=1.63e-06)  </em>sig B_prescreen: effect=-2.74 (p=0.000668)  <em>sig A_structured_guide:B_prescreen: effect=+1.43 (p=0.0229)  </em>sig C_scheduling_tool: effect=-1.48 (p=0.0198)  *sig A_structured_guide:C_scheduling_tool: effect=-0.12 (p=0.823) B_prescreen:C_scheduling_tool: effect=-1.17 (p=0.0502) A_structured_guide:B_prescreen:C_scheduling_tool: effect=+0.38 (p=0.474)</p>
+<h2>6a. Two-sample t (Welch) — before-after-tth.csv</h2>
+<p>before mean=31.0, after=26.6, t=2.88, p=0.0061 -&gt; significant</p>
+<h2>6b. Chi-square independence — offer-acceptance-by-region.csv</h2>
+<p>chi2=9.18, dof=3, p=0.0269 -&gt; acceptance rate depends on region</p>
+<h2>7. Xbar-R control chart — tth-subgroups.csv (n=5)</h2>
+<p>Xbarbar=26.20, Rbar=4.57; Xbar UCL=28.84 LCL=23.57; R UCL=9.65 out-of-control subgroups (special cause): [15]</p></article>
+</main>
+<footer><div class="wrap"><p>Lean Six Sigma — Black Belt. A self-study course that assumes <a href="https://icechathuranga.github.io/lean-six-sigma-green-belt/" target="_blank" rel="noopener">Green Belt</a> knowledge. Your progress saves in this browser. <a href="../index.html">Back to the curriculum</a>.</p></div></footer>
+<script>window.LSS_PAGE={"href": "reference/answer-keys.html", "title": "Answer Keys"};</script>
+<script src="../assets/app.js"></script>
+</body>
+</html>
